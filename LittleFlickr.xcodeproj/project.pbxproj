@@ -14,6 +14,8 @@
 		5FB88FBB2331059D000E84CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB88FB92331059D000E84CE /* LaunchScreen.storyboard */; };
 		5FDFBBF923315CDC001BDA1C /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFBBF823315CDC001BDA1C /* NetworkAPI.swift */; };
 		5FDFBBFB23315E62001BDA1C /* FlickrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFBBFA23315E62001BDA1C /* FlickrModel.swift */; };
+		5FDFBC0323316C68001BDA1C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFBC0223316C68001BDA1C /* UIColor.swift */; };
+		5FDFBC0523316DE5001BDA1C /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFBC0423316DE5001BDA1C /* MainTableViewCell.swift */; };
 		85AE09AB46A01F78076B12C7 /* Pods_LittleFlickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02CD3033D4B6FC36015708F /* Pods_LittleFlickr.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		5FB88FBC2331059D000E84CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FDFBBF823315CDC001BDA1C /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		5FDFBBFA23315E62001BDA1C /* FlickrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrModel.swift; sourceTree = "<group>"; };
+		5FDFBC0223316C68001BDA1C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		5FDFBC0423316DE5001BDA1C /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		8BFB524A989BD688C02772C4 /* Pods-LittleFlickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleFlickr.release.xcconfig"; path = "Target Support Files/Pods-LittleFlickr/Pods-LittleFlickr.release.xcconfig"; sourceTree = "<group>"; };
 		A02CD3033D4B6FC36015708F /* Pods_LittleFlickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LittleFlickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49D08A2FA504FB0B226529D /* Pods-LittleFlickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleFlickr.debug.xcconfig"; path = "Target Support Files/Pods-LittleFlickr/Pods-LittleFlickr.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 		5FDFBBFD233165C6001BDA1C /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				5FDFBC0123316C51001BDA1C /* Extension */,
 				5FB88FBC2331059D000E84CE /* Info.plist */,
 				5FB88FB92331059D000E84CE /* LaunchScreen.storyboard */,
 				5FB88FB72331059D000E84CE /* Assets.xcassets */,
@@ -111,6 +116,7 @@
 		5FDFBBFE233165EA001BDA1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5FB88FB42331059B000E84CE /* Main.storyboard */,
 				5FDFBC0023316610001BDA1C /* SubView */,
 				5FDFBBFF233165FE001BDA1C /* MainView */,
 			);
@@ -121,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				5FB88FB22331059B000E84CE /* MainViewController.swift */,
-				5FB88FB42331059B000E84CE /* Main.storyboard */,
+				5FDFBC0423316DE5001BDA1C /* MainTableViewCell.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -131,6 +137,14 @@
 			children = (
 			);
 			path = SubView;
+			sourceTree = "<group>";
+		};
+		5FDFBC0123316C51001BDA1C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5FDFBC0223316C68001BDA1C /* UIColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		A59A784A278D2CA5F6CF552C /* Pods */ = {
@@ -261,6 +275,8 @@
 				5FB88FB32331059B000E84CE /* MainViewController.swift in Sources */,
 				5FB88FB12331059B000E84CE /* AppDelegate.swift in Sources */,
 				5FDFBBF923315CDC001BDA1C /* NetworkAPI.swift in Sources */,
+				5FDFBC0523316DE5001BDA1C /* MainTableViewCell.swift in Sources */,
+				5FDFBC0323316C68001BDA1C /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

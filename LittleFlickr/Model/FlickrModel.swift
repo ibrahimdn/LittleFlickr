@@ -8,24 +8,24 @@
 
 import Foundation
 
-// MARK: - Flickr
-class Flickr: Codable {
-    let photos: Photos?
+// MARK: - FlickrModel
+class FlickrModel: Codable {
+    let photos: FlickrPhotos?
     let stat: String?
     
-    init(photos: Photos?, stat: String?) {
+    init(photos: FlickrPhotos?, stat: String?) {
         self.photos = photos
         self.stat = stat
     }
 }
 
 // MARK: - Photos
-class Photos: Codable {
+class FlickrPhotos: Codable {
     let page, pages, perpage: Int?
-    let total: String?
-    let photo: [Photo]?
+    let total: Int?
+    let photo: [FlickrPhoto]?
     
-    init(page: Int?, pages: Int?, perpage: Int?, total: String?, photo: [Photo]?) {
+    init(page: Int?, pages: Int?, perpage: Int?, total: Int?, photo: [FlickrPhoto]?) {
         self.page = page
         self.pages = pages
         self.perpage = perpage
@@ -35,7 +35,7 @@ class Photos: Codable {
 }
 
 // MARK: - Photo
-class Photo: Codable {
+class FlickrPhoto: Codable {
     let id, owner, secret, server: String?
     let farm: Int?
     let title: String?

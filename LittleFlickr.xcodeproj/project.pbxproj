@@ -73,14 +73,10 @@
 		5FB88FAF2331059B000E84CE /* LittleFlickr */ = {
 			isa = PBXGroup;
 			children = (
+				5FDFBBFE233165EA001BDA1C /* View */,
+				5FDFBBFD233165C6001BDA1C /* Support */,
 				5FDFBBFC23315E6E001BDA1C /* Model */,
 				5FDFBBF723315CB9001BDA1C /* Network */,
-				5FB88FB02331059B000E84CE /* AppDelegate.swift */,
-				5FB88FB22331059B000E84CE /* MainViewController.swift */,
-				5FB88FB42331059B000E84CE /* Main.storyboard */,
-				5FB88FB72331059D000E84CE /* Assets.xcassets */,
-				5FB88FB92331059D000E84CE /* LaunchScreen.storyboard */,
-				5FB88FBC2331059D000E84CE /* Info.plist */,
 			);
 			path = LittleFlickr;
 			sourceTree = "<group>";
@@ -99,6 +95,42 @@
 				5FDFBBFA23315E62001BDA1C /* FlickrModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5FDFBBFD233165C6001BDA1C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				5FB88FBC2331059D000E84CE /* Info.plist */,
+				5FB88FB92331059D000E84CE /* LaunchScreen.storyboard */,
+				5FB88FB72331059D000E84CE /* Assets.xcassets */,
+				5FB88FB02331059B000E84CE /* AppDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		5FDFBBFE233165EA001BDA1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5FDFBC0023316610001BDA1C /* SubView */,
+				5FDFBBFF233165FE001BDA1C /* MainView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FDFBBFF233165FE001BDA1C /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				5FB88FB22331059B000E84CE /* MainViewController.swift */,
+				5FB88FB42331059B000E84CE /* Main.storyboard */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		5FDFBC0023316610001BDA1C /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		A59A784A278D2CA5F6CF552C /* Pods */ = {
@@ -377,7 +409,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BQRU2GKF7N;
-				INFOPLIST_FILE = LittleFlickr/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LittleFlickr/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,7 +428,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BQRU2GKF7N;
-				INFOPLIST_FILE = LittleFlickr/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LittleFlickr/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

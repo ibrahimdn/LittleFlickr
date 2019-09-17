@@ -12,7 +12,11 @@ import Moya
 class MainViewContoller: UITableViewController {
     
     let flickrProvider = MoyaProvider<FlickrNetwork>()
-
+    var per_page = 20
+    let page = 0
+    
+    var photoData = [FlickrPhoto]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getSearchResults()
@@ -21,13 +25,18 @@ class MainViewContoller: UITableViewController {
 
     func getSearchResults() {
 
-        flickrProvider.request(.getRecent) { [weak self] result in
+        flickrProvider.request(.getRecent(per_page: String(per_page), page: String(page))) { [weak self] result in
             guard self != nil else { return }
             
             switch result {
             case .success(let response):
                 do {
                     print(try response.mapJSON())
+                    let datas = try JSONDecoder().decode(FlickrModel.self, from: response.data)
+                    for data in (datas.photos?.photo)! {
+                        self!.photoData.append(data)
+                    }
+                    print(self!.photoData.count)
                   
                 } catch let error {
                     print(error)
@@ -45,6 +54,5 @@ class MainViewContoller: UITableViewController {
             }
         }
     }
-
 }
 

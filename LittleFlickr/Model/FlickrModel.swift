@@ -40,8 +40,9 @@ class FlickrPhoto: Codable {
     let farm: Int?
     let title: String?
     let ispublic, isfriend, isfamily: Int?
+    let url_m: String?
     
-    init(id: String?, owner: String?, secret: String?, server: String?, farm: Int?, title: String?, ispublic: Int?, isfriend: Int?, isfamily: Int?) {
+    init(id: String?, owner: String?, secret: String?, server: String?, farm: Int?, title: String?, ispublic: Int?, isfriend: Int?, isfamily: Int?, url_m: String?) {
         self.id = id
         self.owner = owner
         self.secret = secret
@@ -51,5 +52,6 @@ class FlickrPhoto: Codable {
         self.ispublic = ispublic
         self.isfriend = isfriend
         self.isfamily = isfamily
+        self.url_m = url_m
     }
 }

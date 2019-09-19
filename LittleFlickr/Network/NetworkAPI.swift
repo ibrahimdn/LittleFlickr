@@ -42,6 +42,7 @@ extension FlickrNetwork: TargetType {
     public var task: Task {
         switch self {
         case .getRecent(let per_page, let page):    return .requestParameters(parameters: [    "api_key": key,
+                                                                                            "extras": "url_m",
                                                                                             "per_page": per_page,
                                                                                             "page":page,
                                                                                             "format": format,

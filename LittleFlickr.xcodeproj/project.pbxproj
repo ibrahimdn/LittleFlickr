@@ -12,6 +12,8 @@
 		5FB88FB62331059B000E84CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB88FB42331059B000E84CE /* Main.storyboard */; };
 		5FB88FB82331059D000E84CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FB88FB72331059D000E84CE /* Assets.xcassets */; };
 		5FB88FBB2331059D000E84CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB88FB92331059D000E84CE /* LaunchScreen.storyboard */; };
+		5FCDC3772334197D00E167B5 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDC3762334197D00E167B5 /* SubViewController.swift */; };
+		5FCDC379233420AB00E167B5 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDC378233420AB00E167B5 /* LoadingTableViewCell.swift */; };
 		5FDFBBF923315CDC001BDA1C /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFBBF823315CDC001BDA1C /* NetworkAPI.swift */; };
 		5FDFBBFB23315E62001BDA1C /* FlickrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFBBFA23315E62001BDA1C /* FlickrModel.swift */; };
 		5FDFBC0323316C68001BDA1C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFBC0223316C68001BDA1C /* UIColor.swift */; };
@@ -27,6 +29,8 @@
 		5FB88FB72331059D000E84CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FB88FBA2331059D000E84CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FB88FBC2331059D000E84CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FCDC3762334197D00E167B5 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubViewController.swift; path = LittleFlickr/View/SubViewController.swift; sourceTree = SOURCE_ROOT; };
+		5FCDC378233420AB00E167B5 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		5FDFBBF823315CDC001BDA1C /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		5FDFBBFA23315E62001BDA1C /* FlickrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrModel.swift; sourceTree = "<group>"; };
 		5FDFBC0223316C68001BDA1C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			children = (
 				5FB88FB22331059B000E84CE /* MainViewController.swift */,
 				5FDFBC0423316DE5001BDA1C /* MainTableViewCell.swift */,
+				5FCDC378233420AB00E167B5 /* LoadingTableViewCell.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 		5FDFBC0023316610001BDA1C /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				5FCDC3762334197D00E167B5 /* SubViewController.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -273,9 +279,11 @@
 			files = (
 				5FDFBBFB23315E62001BDA1C /* FlickrModel.swift in Sources */,
 				5FB88FB32331059B000E84CE /* MainViewController.swift in Sources */,
+				5FCDC3772334197D00E167B5 /* SubViewController.swift in Sources */,
 				5FB88FB12331059B000E84CE /* AppDelegate.swift in Sources */,
 				5FDFBBF923315CDC001BDA1C /* NetworkAPI.swift in Sources */,
 				5FDFBC0523316DE5001BDA1C /* MainTableViewCell.swift in Sources */,
+				5FCDC379233420AB00E167B5 /* LoadingTableViewCell.swift in Sources */,
 				5FDFBC0323316C68001BDA1C /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

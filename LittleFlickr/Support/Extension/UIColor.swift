@@ -9,8 +9,9 @@
 import UIKit
 
 extension UIColor{
-    static var backgroundDarkColor: UIColor {
-        return UIColor(red:0.14, green:0.20, blue:0.28, alpha:1.0)
+    static var backgroundWhiteColor: UIColor {
+        //twitter dark mode color
+        return UIColor.white
     }
     static var textDarkColor: UIColor {
         return UIColor.darkGray

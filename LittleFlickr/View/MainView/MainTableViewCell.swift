@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class MainTableViewCell: UITableViewCell {
 
     
@@ -16,8 +16,13 @@ class MainTableViewCell: UITableViewCell {
     
     var flickrData: FlickrPhoto!{
         didSet{
-            
             titleLbl.text = flickrData.title
+            
+            flickrImage.kf.indicatorType = .activity
+            
+            if let url =  URL(string: flickrData.url_m!) {
+                flickrImage.kf.setImage(with: url)
+            }
         }
         willSet{
             print("new Value")
@@ -26,7 +31,7 @@ class MainTableViewCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
-        self.backgroundColor = UIColor.backgroundDarkColor
+        self.backgroundColor = UIColor.backgroundWhiteColor
         titleLbl.textColor = UIColor.textDarkColor
         selectionStyle = .none
         super.awakeFromNib()

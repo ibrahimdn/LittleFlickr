@@ -19,7 +19,6 @@ class MainViewContoller: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = UIColor.backgroundDarkColor
         updateTitle()
 
         getRecentResults(pageCounter: page)
@@ -62,34 +61,56 @@ class MainViewContoller: UITableViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "toDetailView":
+            if let destination = segue.destination as? SubViewController {
+                if let data = sender as? FlickrPhoto {
+                   destination.data = data
+                }
+            }
+        default: break
+        }
+    }
 }
 
 extension MainViewContoller{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        performSegue(withIdentifier: "toDetailView", sender: photoData[indexPath.row])
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? MainTableViewCell{
+        if indexPath.row == photoData.count {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "cellLoading") as? LoadingTableViewCell{
+                cell.indicator.startAnimating()
+                return cell
+            }else{
+               return UITableViewCell()
+            }
+        }else if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? MainTableViewCell{
            // cell.backgroundColor = .backgroundDarkColor
             cell.flickrData = photoData[indexPath.row]
-           return cell
+            return cell
+        
+         
         }else{
             return UITableViewCell()
         }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photoData.count
+        return photoData.count+1
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard indexPath.row != photoData.count else{
+           return 100
+        }
+        
         return 400
     }
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        print("Willdisplay")
-        print(indexPath)
-            if photoData.count-1 == indexPath.row{
+            if photoData.count == indexPath.row{
                 page += 1
                 getRecentResults(pageCounter: page)
-                
             }
     }
    

@@ -24,10 +24,6 @@ class MainTableViewCell: UITableViewCell {
                 flickrImage.kf.setImage(with: url)
             }
         }
-        willSet{
-            print("new Value")
-            print(newValue as Any)
-        }
     }
     
     override func awakeFromNib() {

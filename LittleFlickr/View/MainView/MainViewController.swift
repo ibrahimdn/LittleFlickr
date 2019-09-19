@@ -89,6 +89,7 @@ extension MainViewContoller{
             }
         }else if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? MainTableViewCell{
            // cell.backgroundColor = .backgroundDarkColor
+            print(photoData[indexPath.row].title!)
             cell.flickrData = photoData[indexPath.row]
             return cell
         

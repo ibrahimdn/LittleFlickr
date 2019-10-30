@@ -14,7 +14,6 @@ class LoadingTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         self.backgroundColor = UIColor.backgroundWhiteColor
-
         super.awakeFromNib()
         // Initialization code
     }

@@ -14,27 +14,24 @@ class MainViewContoller: UITableViewController {
     let flickrProvider = MoyaProvider<FlickrNetwork>()
     var per_page = 20
     var page = 0
-    
     var photoData = [FlickrPhoto]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateTitle()
-
         getRecentResults(pageCounter: page)
-        
-        // Do any additional setup after loading the view.
     }
+    
     func updateTitle(){
         navigationController?.navigationBar.topItem?.title = "Little Flickr"
         navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
     }
+    
     func getRecentResults(pageCounter: Int) {
 
         flickrProvider.request(.getRecent(per_page: String(per_page), page: String(pageCounter))) { [weak self] result in
             guard self != nil else { return }
-            
             switch result {
             case .success(let response):
                 do {
@@ -43,7 +40,6 @@ class MainViewContoller: UITableViewController {
                     for data in (datas.photos?.photo)! {
                         self!.photoData.append(data)
                     }
-                print(self!.photoData.count)
                   self!.tableView.reloadData()
                 } catch let error {
                     print(error)
@@ -55,7 +51,6 @@ class MainViewContoller: UITableViewController {
                         print("401")
                     }else{
                         print(error)
-                        
                     }
                 }
             }
@@ -88,31 +83,28 @@ extension MainViewContoller{
                return UITableViewCell()
             }
         }else if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? MainTableViewCell{
-           // cell.backgroundColor = .backgroundDarkColor
-            print(photoData[indexPath.row].title!)
             cell.flickrData = photoData[indexPath.row]
             return cell
-        
-         
         }else{
             return UITableViewCell()
         }
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photoData.count+1
     }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard indexPath.row != photoData.count else{
            return 100
         }
-        
         return 400
     }
+    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             if photoData.count == indexPath.row{
                 page += 1
                 getRecentResults(pageCounter: page)
             }
     }
-   
 }
